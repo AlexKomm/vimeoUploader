@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vimeo Uploader{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('vimeo') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('vimeo') }}
+{% endblock %}
+
+{% block body %}
+    <div id="root"></div>
+    <div id="modal"></div>
+    <div class="js-user" data-user="{{ app.user ? { id: app.user.id, email: app.user.email }|json_encode() : null }}"></div>
+{% endblock %}
